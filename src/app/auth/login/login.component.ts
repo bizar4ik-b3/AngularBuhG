@@ -24,17 +24,18 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.message = new Message("danger", "");
     this.route.queryParams.subscribe((params: Params) => {
       // tslint:disable-next-line: no-string-literal
-      if (params["nowCanLogin"]) {
+      if (params["nowCanLoggin"]) {
         this.showMessage(
           {
             text: "Now you can enter to the system",
-            type:  "succes"
+            type:  "success"
           });
-        }
+      }
      });
-    this.message = new Message("danger","");
+
     this.form = new FormGroup({
       'email': new FormControl(null,[Validators.required,Validators.email]),
       'password': new FormControl(null,[Validators.required,Validators.minLength(6)]),
@@ -63,9 +64,7 @@ export class LoginComponent implements OnInit {
             type: "danger"
           });
         }
-
       });
-    console.log(this.user);
   }
 
   private showMessage(message:Message) {
