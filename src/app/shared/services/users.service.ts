@@ -18,9 +18,6 @@ export class UsersService {
   }
   createNewUser(user:User):Observable<User> {
     return this.httpclient.post(`http://localhost:3000/users`, user)
-      .map((response: Response) =>  response.json());
-
+      .map((response: Response) => response.json());
   }
 }
-
-
