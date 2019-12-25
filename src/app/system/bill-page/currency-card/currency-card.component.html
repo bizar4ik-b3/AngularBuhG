@@ -15,20 +15,16 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td>доллар</td>
-                        <td>24</td>
-                        <td>12.12.2017</td>
+                        <td>EUR</td>
+                        <td>1</td>
+                    <td>{{currency.date}}</td>
                     </tr>
-                    <tr>
-                        <td>евро</td>
-                        <td>26</td>
-                        <td>12.12.2017</td>
+                    <tr *ngFor="let item of currencies">
+                        <td>{{item}}</td>
+                        <td>{{currency.rates[item]}}</td>
+                        <td>{{currency.date}}</td>
                     </tr>
-                    <tr>
-                        <td>рубль</td>
-                        <td>0.4</td>
-                        <td>12.12.2017</td>
-                    </tr>
+
                     </tbody>
                 </table>
             </div>

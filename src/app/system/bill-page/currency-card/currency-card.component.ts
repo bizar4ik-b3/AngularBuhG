@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'wfm-currency-card',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CurrencyCardComponent implements OnInit {
 
+  @Input() currency: any;
+  currencies: string[] = ['USD','UAH'];
   constructor() { }
 
   ngOnInit() {
+    console.log(this.currencies);
   }
 
 }
